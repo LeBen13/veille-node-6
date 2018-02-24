@@ -1,0 +1,76 @@
+<h1>Membres</h1>
+<table class="tableau">
+    <% let noLigne = 0 %>
+
+        <% if(typeof ordre_url == 'undefined') {ordre_url = 'asc'} %>
+
+            <% for(element of membres){ %>
+
+                <% if (noLigne==0){ %>
+                    <tr>
+                        <% noLigne++ %>
+                            <!--<% for (p in element){ %>
+	 				<th><a href=http://localhost:8081/trier/<%= p %>/asc ><%= p %></a></th>
+	 				<% } %>-->
+
+                            <th><a href=http://localhost:8081/trier/_id/<%=o rdre_url %> >_id</a></th>
+                            <th><a href=http://localhost:8081/trier/prenom/<%=o rdre_url %> >prenom</a></th>
+                            <th><a href=http://localhost:8081/trier/nom/<%=o rdre_url %> >nom</a></th>
+                            <th><a href=http://localhost:8081/trier/telephone/<%=o rdre_url %> >telephone</a></th>
+                            <th><a href=http://localhost:8081/trier/courriel/<%=o rdre_url %> >courriel</a></th>
+                            <th><a href=http://localhost:8081/trier/_id/<%=o rdre_url %> >_id</a></th>
+                            <th></th>
+                            <th>
+                                <a href=http://localhost:8081/ajouter> Ajouter </a>
+                            </th>
+                    </tr>
+                    <% } %>
+                        <% } %>
+
+                            <% for (elm of membres) {%>
+                                <tr>
+                                    <td>
+                                        <%= elm._id %>
+                                    </td>
+                                    <td contenteditable>
+                                        <%= elm.prenom %>
+                                    </td>
+                                    <td contenteditable>
+                                        <%= elm.nom %>
+                                    </td>
+                                    <td contenteditable>
+                                        <%= elm.telephone %>
+                                    </td>
+                                    <td contenteditable>
+                                        <%= elm.courriel %>
+                                    </td>
+                                    <td><a href="#" class="modifier"> Enregistrer (Modifier) </a></td>
+                                    <td><a href=http://localhost:8081/supprimer/<%=e lm._id %> >Supprimer </a></td>
+
+                                </tr>
+                                <% } %>
+</table>
+
+<form id='frmModif' action="/modifier" method="POST">
+    <input type="hidden" name="_id">
+    <input type="hidden" name="prenom">
+    <input type="hidden" name="nom">
+    <input type="hidden" name="telephone">
+    <input type="hidden" name="courriel">
+</form>
+
+<h1>Inscription membre</h1>
+<form action="http://127.0.0.1:8081/ajouter" method="GET">
+    Prénom:
+    <input type="text" name="prenom">
+    <br> Nom:
+    <input type="text" name="nom">
+    <br> Téléphone:
+    <input type="text" name="telephone">
+    <br> Courriel:
+    <input type="text" name="courriel">
+    <br>
+    <input type="submit" value="Submit" class="bouton">
+</form>
+
+<script type="text/javascript" src="js/modifier.js"></script>
