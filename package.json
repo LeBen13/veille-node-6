@@ -1,0 +1,29 @@
+{
+  "name": "veille-node-6",
+  "version": "1.0.0",
+  "description": "veille-node-6",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "ejs",
+    "MongoDB"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lugia100/veille-node-6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lugia100/veille-node-6/issues"
+  },
+  "homepage": "https://github.com/Lugia100/veille-node-6#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.2"
+  }
+}
